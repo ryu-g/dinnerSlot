@@ -2,10 +2,8 @@ import java.util.*;
 
 ArrayList<String> pool;
 int i=0;
-int count=0;
 int roll=1;
 String pop;
-PFont myFont;
 
 void setup() {
 	pool = new ArrayList<String>();
