@@ -23,7 +23,6 @@ void setPool(){
 	pool.add("NAKA-U");
 	pool.add("CARRY");
 	pool.add("Japanese SUSHI");
-
 }
 
 void draw() {
@@ -31,7 +30,7 @@ void draw() {
 	textAlign(CENTER);
 	stroke(0);
 	textSize(25);
-	i=int(random(0,7));
+	i=int(random(0,pool.size()-1));
 	if(roll > 0)
 	pop =  pool.get(i);
 	text("press SPASE key", width/2, height/3);
