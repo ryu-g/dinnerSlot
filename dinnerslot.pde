@@ -2,8 +2,8 @@ import java.util.*;
 
 ArrayList<String> pool;
 int i=0;
-int roll=1;
-String pop;
+int roll=-1;
+String pop = "press space";
 
 void setup() {
 	pool = new ArrayList<String>();
@@ -30,19 +30,22 @@ void draw() {
 	textAlign(CENTER);
 	stroke(0);
 	textSize(25);
-	i=int(random(0,pool.size()-1));
-	if(roll > 0)
-	pop =  pool.get(i);
-	text("press SPASE key", width/2, height/3);
-	text("todays dinner is...", width/2, 3*height/7);
+	text("hold SPASE key", width/2, height/3);
+	text("today's dinner is...", width/2, 3*height/7);
+	if(keyPressed && key==' '){
+		i=int(random(0,pool.size()-1));
+		pop =  pool.get(i);
+		println(pop);
+	}else if(keyPressed && key!=' '){
+	text("that is "+key+" key", width/2, 5*height/6);}
 	text(pop, width/2, 3*height/4);
-	if(roll<0)
-	text("one more?", width/2, 5*height/6);
+	if(roll<0)text("one more?", width/2, 5*height/6);
 }
 
-void keyPressed() {
-	if(key==' '){
-		println(pop);
-		roll*=-1;
-	}
+void keyPressed() {// while spase key pressed rikk slot
+	roll=1; //rolling now
+}
+
+void keyReleased(){
+	roll=-1;// not rolling
 }
