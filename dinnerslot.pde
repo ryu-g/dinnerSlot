@@ -76,7 +76,7 @@ if(mode==1){
 }
 }
 
-void keyPressed() {// while spase key pressed rikk slot
+void keyPressed() {
 	roll=1; //rolling now
 	if(command==0&&key=='c')command+=1;else command=0;
 	if(command==1&&key=='o')command+=1;else command=0;
