@@ -7,7 +7,8 @@ int roll=-1;
 int mode=0;
 int command=0;
 String pop = "press space";
-
+char c = 'c';
+char b = 'b';
 void setup() {
 	pool = new ArrayList<String>();
 	cook = new ArrayList<String>();
@@ -78,19 +79,11 @@ if(mode==1){
 
 void keyPressed() {
 	roll=1; //rolling now
+	if(mode==0&&key==c){mode=1;}
+	if(mode==1&&key==b){mode=0;}
 }
 
 void keyReleased(){
 	roll=-1;// not rolling
-	if(mode==0){
-	if(command==0&&key=='c')command+=1;else command=0;
-	if(command==1&&key=='o')command+=1;else command=0;
-	if(command==2&&key=='o')command+=1;else command=0;
-	if(command==0&&key=='k'){println("mode: "+mode);mode=1;command=0;}else command=0;
-	}else if(mode==1){
-	if(command==0&&key=='b')command+=1;else command=0;
-	if(command==1&&key=='a')command+=1;else command=0;
-	if(command==2&&key=='c')command+=1;else command=0;
-	if(command==0&&key=='k'){println("mode: "+mode);mode=0;command=0;}else command=0;
-	}
 }
+
