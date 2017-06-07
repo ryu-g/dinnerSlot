@@ -78,12 +78,19 @@ if(mode==1){
 
 void keyPressed() {
 	roll=1; //rolling now
-	if(command==0&&key=='c')command+=1;else command=0;
-	if(command==1&&key=='o')command+=1;else command=0;
-	if(command==2&&key=='0')command+=1;else command=0;
-	if(command==0&&key=='k'){println("mode: "+mode);mode=1;command=0;}else command=0;
 }
 
 void keyReleased(){
 	roll=-1;// not rolling
+	if(mode==0){
+	if(command==0&&key=='c')command+=1;else command=0;
+	if(command==1&&key=='o')command+=1;else command=0;
+	if(command==2&&key=='o')command+=1;else command=0;
+	if(command==0&&key=='k'){println("mode: "+mode);mode=1;command=0;}else command=0;
+	}else if(mode==1){
+	if(command==0&&key=='b')command+=1;else command=0;
+	if(command==1&&key=='a')command+=1;else command=0;
+	if(command==2&&key=='c')command+=1;else command=0;
+	if(command==0&&key=='k'){println("mode: "+mode);mode=0;command=0;}else command=0;
+	}
 }
